@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{{- $defaultColor := .Site.Params.defaultColor | default "auto" -}}
+
+{{/* allow website developer to enforce default dark mode */}}
+{{- if eq $defaultColor "dark" -}}
+<html lang="{{ .Site.LanguageCode }}" class="dark">
+{{- else if eq $defaultColor "light" -}}
+<html lang="{{ .Site.LanguageCode }}" class="light">
+{{- else -}}
+<html lang="{{ .Site.LanguageCode }}">
+{{- end -}}
+
+{{- partial "head.html" . -}}
+
+<body data-theme="{{ $defaultColor }}" class="notransition">
+    {{- partial "scriptsBodyStart.html" . -}}
+    {{- partial "header.html" . -}}
+    <div class="wrapper">
+        <main aria-label="Content">
+            {{/* 网站欢迎内容 */}}
+            <div class="website-intro">
+                <div class="welcome-content">
+                    {{ if .Content }}
+                        {{ .Content }}
+                    {{ else }}
+                        <h2>Welcome to Haozhe's Website</h2>
+                        <p>Hi! I'm Haozhe Li, and this is my personal website.</p>
+                    {{ end }}
+                </div>
+
+                {{/* 居中头像，放在"作品集链接按钮"正上方 */}}
+                {{- $avatarPath := .Site.Params.avatar | default "avatar.svg" -}}
+                {{- $avatar := resources.Get $avatarPath -}}
+                {{- $alt := (cond (ne (printf "%v" .Params.author) "<nil>") .Params.author "Haozhe Li") -}}
+                {{- if $avatar -}}
+                    {{- if eq $avatar.MediaType.SubType "svg" -}}
+                        <img class="avatar avatar--center" src="{{ $avatar.RelPermalink }}" alt="{{ $alt }}" />
+                    {{- else -}}
+                        {{- $square := $avatar.Fill "200x200 Center" -}}
+                        <img class="avatar avatar--center" src="{{ $square.RelPermalink }}" alt="{{ $alt }}" />
+                    {{- end -}}
+                {{- else -}}
+                    <img class="avatar avatar--center" src="{{ "assets/avatar.svg" | relURL }}" alt="{{ $alt }}" />
+                {{- end -}}
+
+                {{/* 作品集链接按钮 */}}
+                <div class="portfolio-section">
+                    <p class="portfolio-description">
+                        To view my projects and portfolio, please visit:
+                    </p>
+                    <div class="portfolio-button-container">
+                        <a href="https://lihaozhe013.github.io/my-portfolio/" target="_blank" rel="noopener" class="portfolio-btn">
+                            <span class="btn-text">View My Portfolio</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="portfolio-section">
+                    <p class="portfolio-description">
+                        To view my resume, please visit:
+                    </p>
+                    <div class="portfolio-button-container">
+                        <a href="https://lihaozhe013.github.io/lihaozhe-website/documents/resume.pdf" target="_blank" rel="noopener" class="portfolio-btn">
+                            <span class="btn-text">View My Resume</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    {{- partial "footer.html" . -}}
+    {{- partial "scriptsBodyEnd.html" . -}}
+</body>
+
+</html>

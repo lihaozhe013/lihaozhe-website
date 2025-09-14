@@ -1,0 +1,92 @@
+title = "Haozhe Li's Website"
+baseURL = 'https://lihaozhe013.github.io/lihaozhe-website/'
+languageCode = 'en-us'
+theme = "hugo-blog-awesome"
+enableEmoji = true
+ignoreErrors = ["additional-script-loading-error"]
+
+[services]
+  # 谷歌分析，留空为禁用
+  [services.googleAnalytics]
+    id = '' # G-MEASUREMENT_ID
+  # Disqus 评论，留空为禁用
+  [services.disqus]
+    shortname = ''
+
+# --- Markdown 渲染配置 ---
+[markup]
+  [markup.highlight]
+    # 确保代码高亮可用
+    noClasses = false
+  [markup.goldmark.renderer]
+    # 允许在 Markdown 中使用原始 HTML
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2 # 目录从 H2 标题开始
+    endLevel = 4   # 目录到 H4 标题结束
+    ordered = false # 生成无序列表 (<ul>)
+
+# --- 网站主菜单 ---
+[menu]
+  [[menu.main]]
+    pageRef="/"
+    name = 'Home'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    pageRef="posts"
+    name = 'Posts'
+    url = '/posts/'
+    weight = 20
+  [[menu.main]]
+    pageRef="about"
+    name = 'About'
+    url = '/about/'
+    weight = 30
+
+# --- 全局参数 (替代了原来的 [Languages.en-gb.params]) ---
+[params]
+  sitename = "Haozhe's Website"
+  description = "Haozhe's Personal Website"
+  defaultColor = "auto" # 颜色模式: dark, light, auto
+  mainSections = ['posts']
+  toc = true # 全局启用目录
+  tocOpen = false # 目录默认展开
+  goToTop = true # 启用“返回顶部”按钮
+  math = true # 全站启用 KaTeX (可在页面 Front Matter 中用 math: false 覆盖)
+  
+  # 自定义脚本
+  # additionalScripts = ['js/custom.js']
+  
+  # 日期格式，留空则使用默认 "2 Jan 2006"
+  dateFormat = ""
+  # RSS Feed 中包含的内容: "summary" 或 "full"
+  rssFeedDescription = "summary"
+
+  # 作者信息
+  [params.author]
+    avatar = "avatar.svg" # 图片放在 assets/ 目录下
+    intro = "Haozhe Li's Website"
+    name = "Haozhe Li"
+    description = "Welcome to my personal website where I write about my portfolio."
+
+  # 社交链接图标
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/lihaozhe013"
+  # 你可以继续添加更多社交链接
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/lihaozhe013"
+
+  # PWA / 移动浏览器配置
+  [params.webmanifest]
+    name = "Haozhe Li's Website"
+    short_name = "Haozhe's Website"
+    start_url = "/"
+    theme_color = "#434648"
+    background_color = "#fff"
+    display = "standalone"
+
+  [params.browserconfig]
+    TileColor = "#2d89ef"
