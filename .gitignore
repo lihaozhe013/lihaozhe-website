@@ -1,0 +1,6 @@
+/public/
+/resources/
+.hugo_build.lock
+content/posts/.DS_Store
+static/.DS_Store
+.DS_Store
