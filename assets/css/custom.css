@@ -13,7 +13,24 @@
 }
 
 body {
-    font-family: 'Source Serif 4', 'Open Sans', 'Roboto', sans-serif;
+    font-family: 'Open Sans', 'Roboto', sans-serif;
+}
+
+.navbar,
+.wrapper {
+    max-width: none;
+    width: 80%;
+}
+
+pre > code {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+main {
+    width: 90%;
+    margin-left: 5%;
 }
 
 :root {

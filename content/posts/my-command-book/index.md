@@ -1,11 +1,11 @@
 +++
 date = '2022-09-01T00:00:00-00:00'
 draft = false
-title = 'MY COMMAND BOOK'
+title = 'My Command Book'
 +++
 
 ### Git Clear Local Branches
-Git Clear All Local Branches Except for Current Branche
+Clear all local branches except for the current branche
 ```bash
 git branch | grep -v "$(git symbolic-ref --short HEAD)" | xargs git branch -D && git tag -l | xargs git tag -d
 ```
@@ -26,16 +26,15 @@ git merge --no-ff feature-branch
 New-Item -ItemType SymbolicLink -Path "C:\link\myshortcut" -Target "C:\original\myfolder"
 ```
 
-
 **Example: Link a folder**
 Suppose you want to create a symbolic link from:
 
 **Target**: `C:\Projects\RealFolder`
+<br>
 **Link**: `C:\Links\ShortcutToProject`
 
 ```powershell
 New-Item -ItemType SymbolicLink -Path "C:\Links\ShortcutToProject" -Target "C:\Projects\RealFolder"
 ```
-
 
 <br>
