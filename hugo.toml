@@ -1,87 +1,101 @@
-title = "Haozhe Li's Website"
 baseURL = 'https://lihaozhe013.github.io/lihaozhe-website/'
-languageCode = 'en-us'
 theme = "hugo-blog-awesome"
 enableEmoji = true
 ignoreErrors = ["additional-script-loading-error"]
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
 
 [services]
-  # 谷歌分析，留空为禁用
   [services.googleAnalytics]
-    id = '' # G-MEASUREMENT_ID
-  # Disqus 评论，留空为禁用
+    id = ''
   [services.disqus]
     shortname = ''
 
-# --- Markdown 渲染配置 ---
 [markup]
   [markup.highlight]
-    # 确保代码高亮可用
     noClasses = false
   [markup.goldmark.renderer]
-    # 允许在 Markdown 中使用原始 HTML
     unsafe = true
   [markup.tableOfContents]
-    startLevel = 2 # 目录从 H2 标题开始
-    endLevel = 4   # 目录到 H4 标题结束
-    ordered = false # 生成无序列表 (<ul>)
+    startLevel = 2
+    endLevel = 4
+    ordered = false
 
-# --- 网站主菜单 ---
-[menu]
-  [[menu.main]]
-    pageRef="/"
+# --- English (default) ---
+[languages.en]
+  locale = 'en-us'
+  label = 'English'
+  title = "Haozhe Li's Website"
+  weight = 1
+  [languages.en.params]
+    sitename = "Haozhe's Website"
+    description = "Haozhe's Personal Website"
+  [[languages.en.menu.main]]
+    pageRef = "/"
     name = 'Home'
     url = '/'
     weight = 10
-  [[menu.main]]
-    pageRef="posts"
+  [[languages.en.menu.main]]
+    pageRef = "posts"
     name = 'Posts'
     url = '/posts/'
     weight = 20
-  [[menu.main]]
-    pageRef="about"
+  [[languages.en.menu.main]]
+    pageRef = "about"
     name = 'About'
     url = '/about/'
     weight = 30
 
-# --- 全局参数 (替代了原来的 [Languages.en-gb.params]) ---
+# --- 简体中文 ---
+[languages.zh-cn]
+  locale = 'zh-cn'
+  label = '中文'
+  title = "李浩哲的网站"
+  weight = 2
+  [languages.zh-cn.params]
+    sitename = "浩哲的网站"
+    description = ""
+  [[languages.zh-cn.menu.main]]
+    pageRef = "/"
+    name = '首页'
+    url = '/'
+    weight = 10
+  [[languages.zh-cn.menu.main]]
+    pageRef = "posts"
+    name = '文章'
+    url = '/posts/'
+    weight = 20
+  [[languages.zh-cn.menu.main]]
+    pageRef = "about"
+    name = '关于'
+    url = '/about/'
+    weight = 30
+
+# --- 全局参数 ---
 [params]
-  sitename = "Haozhe's Website"
-  description = "Haozhe's Personal Website"
-  
-  defaultColor = "auto" # 颜色模式: dark, light, auto
+  defaultColor = "auto"
   mainSections = ['posts']
-  toc = true # 全局启用目录
-  tocOpen = false # 目录默认展开
-  goToTop = true # 启用“返回顶部”按钮
-  math = true # 全站启用 KaTeX (可在页面 Front Matter 中用 math: false 覆盖)
-  
-  # 自定义脚本
-  # additionalScripts = ['js/custom.js']
-  
-  # 日期格式，留空则使用默认 "2 Jan 2006"
+  toc = true
+  tocOpen = false
+  goToTop = true
+  math = true
   dateFormat = ""
-  # RSS Feed 中包含的内容: "summary" 或 "full"
   rssFeedDescription = "summary"
 
-  # 作者信息
   [params.author]
-    avatar = "avatar.svg" # 图片放在 assets/ 目录下
+    avatar = "avatar.svg"
     intro = "Haozhe Li's Website"
     name = "Haozhe Li"
     email = "lihaozhe013@gmail.com"
     description = "Welcome to my personal website where I write about my portfolio."
 
-  # 社交链接图标
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/lihaozhe013"
-  # 你可以继续添加更多社交链接
   [[params.socialIcons]]
     name = "linkedin"
     url = "https://linkedin.com/in/lihaozhe013"
 
-  # PWA / 移动浏览器配置
   [params.webmanifest]
     name = "Haozhe Li's Website"
     short_name = "Haozhe's Website"
