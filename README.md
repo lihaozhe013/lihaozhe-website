@@ -111,11 +111,11 @@ Shared params (author, social links, webmanifest, etc.) live in the global `[par
 
 Three font families are loaded via `assets/css/fonts.css`:
 
-| Font | Role | Weights |
-|------|------|---------|
-| Noto Serif | English body text | 100–900, normal + italic |
-| ZhuqueFangsong | Chinese body text | Regular |
-| Noto Serif SC | Chinese fallback (CJK coverage) | 100–900 |
+| Font           | Role                            | Weights                  |
+| -------------- | ------------------------------- | ------------------------ |
+| Noto Serif     | English body text               | 100–900, normal + italic |
+| ZhuqueFangsong | Chinese body text               | Regular                  |
+| Noto Serif SC  | Chinese fallback (CJK coverage) | 100–900                  |
 
 Font files are served from `static/fonts/` via the URL prefix `https://lihaozhe013.github.io/lihaozhe-website/fonts/`.
 

@@ -81,50 +81,50 @@ MIT License.
 
 ```yaml
 server:
-  host: "0.0.0.0"
+  host: '0.0.0.0'
   port: 8000
   readTimeout: 30s
   writeTimeout: 30s
 
 storage:
-  uploadDir: "./files"
-  incomingDir: "./files/incoming"
-  privateDir: "./files/private-files"
-  maxUploadSize: 10737418240  # 10GB
+  uploadDir: './files'
+  incomingDir: './files/incoming'
+  privateDir: './files/private-files'
+  maxUploadSize: 10737418240 # 10GB
 
 security:
   allowedExtensions:
-    - ".jpg"
-    - ".jpeg"
-    - ".png"
-    - ".gif"
-    - ".pdf"
-    - ".md"
-    - ".txt"
-    - ".html"
-    - ".css"
-    - ".js"
-    - ".zip"
-    - ".tar"
-    - ".gz"
-    - ".7z"
-    - ".svg"
-    - ".mp4"
-    - ".mov"
-    - ".mp3"
-    - ".docx"
-    - ".xlsx"
-    - ".pptx"
-    - ".rtf"
-    - ".db"
+    - '.jpg'
+    - '.jpeg'
+    - '.png'
+    - '.gif'
+    - '.pdf'
+    - '.md'
+    - '.txt'
+    - '.html'
+    - '.css'
+    - '.js'
+    - '.zip'
+    - '.tar'
+    - '.gz'
+    - '.7z'
+    - '.svg'
+    - '.mp4'
+    - '.mov'
+    - '.mp3'
+    - '.docx'
+    - '.xlsx'
+    - '.pptx'
+    - '.rtf'
+    - '.db'
   blockedPaths:
-    - "incoming"
-    - "private-files"
+    - 'incoming'
+    - 'private-files'
 
 logging:
-  enabled: true        # Log switch. If set to false, logging is completely disabled.
-  level: "info"        # Log level: debug, info, warn, error
-  format: "json"       # Log format: json, text
-  toFile: false        # Whether output to a file instead of the console
-  logDir: "./logs"     # Log file directory (effective when `toFile` is true)
+  enabled: true # Log switch. If set to false, logging is completely disabled.
+  level: 'info' # Log level: debug, info, warn, error
+  format: 'json' # Log format: json, text
+  toFile: false # Whether output to a file instead of the console
+  logDir: './logs' # Log file directory (effective when `toFile` is true)
 ```

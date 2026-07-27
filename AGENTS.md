@@ -6,21 +6,21 @@ This is a Hugo static site using the `hugo-blog-awesome` theme (git submodule). 
 
 ## Key Files
 
-| File | Purpose |
-|------|---------|
-| `hugo.toml` | Site config: multilingual setup (with `contentDir` per language), menus, global params |
-| `content/en/` | English content (default language, URL prefix: none) |
-| `content/zh-cn/` | Chinese content (URL prefix: `/zh-cn/`) |
-| `i18n/en.yaml` | English UI translation strings |
-| `i18n/zh-cn.yaml` | Chinese UI translation strings |
-| `assets/css/fonts.css` | All `@font-face` declarations (Noto Serif, ZhuqueFangsong, Noto Serif SC) |
-| `assets/css/custom.css` | Global styles and font-family stack |
-| `assets/js/lang.js` | Browser language detection + localStorage persistence |
-| `layouts/index.html` | Custom homepage template (uses `{{ i18n }}` for i18n) |
-| `layouts/partials/header.html` | Overridden: always-visible language switcher (replaces theme's version) |
-| `layouts/partials/custom-head.html` | Injects fonts.css, custom.css, lang.js, and KaTeX into `<head>` |
-| `layouts/_default/rss.xml` | Custom RSS template override |
-| `themes/hugo-blog-awesome/` | Theme submodule |
+| File                                | Purpose                                                                                |
+| ----------------------------------- | -------------------------------------------------------------------------------------- |
+| `hugo.toml`                         | Site config: multilingual setup (with `contentDir` per language), menus, global params |
+| `content/en/`                       | English content (default language, URL prefix: none)                                   |
+| `content/zh-cn/`                    | Chinese content (URL prefix: `/zh-cn/`)                                                |
+| `i18n/en.yaml`                      | English UI translation strings                                                         |
+| `i18n/zh-cn.yaml`                   | Chinese UI translation strings                                                         |
+| `assets/css/fonts.css`              | All `@font-face` declarations (Noto Serif, ZhuqueFangsong, Noto Serif SC)              |
+| `assets/css/custom.css`             | Global styles and font-family stack                                                    |
+| `assets/js/lang.js`                 | Browser language detection + localStorage persistence                                  |
+| `layouts/index.html`                | Custom homepage template (uses `{{ i18n }}` for i18n)                                  |
+| `layouts/partials/header.html`      | Overridden: always-visible language switcher (replaces theme's version)                |
+| `layouts/partials/custom-head.html` | Injects fonts.css, custom.css, lang.js, and KaTeX into `<head>`                        |
+| `layouts/_default/rss.xml`          | Custom RSS template override                                                           |
+| `themes/hugo-blog-awesome/`         | Theme submodule                                                                        |
 
 ## Multilingual Architecture
 
@@ -66,11 +66,11 @@ The theme's default `header.html` only shows the language switcher when `.IsTran
 
 The language detection script handles first-visit redirection and language persistence:
 
-| Scenario | Behavior |
-|----------|----------|
-| First visit (no localStorage) | Detect `navigator.language`, redirect to matching language homepage, save to localStorage |
-| Subsequent visits | Save current URL's language to localStorage, **no redirect** |
-| User switches language via `<select>` | Save choice to localStorage, navigate to selected URL |
+| Scenario                              | Behavior                                                                                  |
+| ------------------------------------- | ----------------------------------------------------------------------------------------- |
+| First visit (no localStorage)         | Detect `navigator.language`, redirect to matching language homepage, save to localStorage |
+| Subsequent visits                     | Save current URL's language to localStorage, **no redirect**                              |
+| User switches language via `<select>` | Save choice to localStorage, navigate to selected URL                                     |
 
 Key design decision: the script does **not** redirect on every page load. Language state is maintained by URL structure. The script only redirects on the very first visit to provide a good default, then stays out of the way.
 

@@ -22,7 +22,7 @@ The program is developed on Debian 11 + Mate Desktop Environment
 - Support raw data, the app can process raw geographic data to create a dynamic map
 - Supports multithreading to maximize utilization of machine resources for calculating shortest paths, multiple stops, and coordinate transformations.
 - Utilized TomTom API to display real time traffic.
-- **A* Algorithm** was implemented for finding the shortest path, while **Dijkstra Algorithm**, **Multi-Start Greedy Method** and **Simulated Annealing** was implemented to find the multi-stop route planning.
+- _*A* Algorithm_* was implemented for finding the shortest path, while **Dijkstra Algorithm**, **Multi-Start Greedy Method** and **Simulated Annealing** was implemented to find the multi-stop route planning.
 
 # User Manual (User Side Features)
 
@@ -126,8 +126,8 @@ Now, click on the “Directions” button on the right side, the travel directio
 **Figure 6.3: Travel Direction Text Window**
 
 > **Note:**
-To cancel a selected point, just click the red dot again to deselect.
-To cancel a selected route, randomly select another intersection, this will automatically cancel the display of route.
+> To cancel a selected point, just click the red dot again to deselect.
+> To cancel a selected route, randomly select another intersection, this will automatically cancel the display of route.
 
 Example use:
 

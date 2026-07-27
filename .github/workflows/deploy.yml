@@ -15,7 +15,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
@@ -40,12 +40,12 @@ jobs:
         if: steps.detect_mod.outputs.has_mod == 'true'
         uses: actions/setup-go@v5
         with:
-          go-version: "1.22.x"
+          go-version: '1.22.x'
 
       - name: Setup Hugo (extended)
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "latest"
+          hugo-version: 'latest'
           extended: true
 
       - name: Compute baseURL
@@ -103,7 +103,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
-            
+
             for (const workflow of workflows.workflows) {
               const { data: runs } = await github.rest.actions.listWorkflowRuns({
                 owner: context.repo.owner,
@@ -138,10 +138,10 @@ jobs:
               repo: context.repo.repo,
               per_page: 100
             });
-            
+
             // 保留最新的3个artifact, 删除其余的
             const artifactsToDelete = artifacts.artifacts.slice(3);
-            
+
             for (const artifact of artifactsToDelete) {
               try {
                 await github.rest.actions.deleteArtifact({

@@ -1,195 +1,223 @@
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: normal;
   font-weight: 100;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-Thin.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-Thin.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: italic;
   font-weight: 100;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-ThinItalic.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-ThinItalic.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: normal;
   font-weight: 200;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-ExtraLight.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-ExtraLight.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: italic;
   font-weight: 200;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-ExtraLightItalic.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-ExtraLightItalic.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: normal;
   font-weight: 300;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-Light.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-Light.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: italic;
   font-weight: 300;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-LightItalic.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-LightItalic.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: normal;
   font-weight: 400;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-Regular.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-Regular.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: italic;
   font-weight: 400;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-Italic.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-Italic.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: normal;
   font-weight: 500;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-Medium.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-Medium.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: italic;
   font-weight: 500;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-MediumItalic.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-MediumItalic.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: normal;
   font-weight: 600;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-SemiBold.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-SemiBold.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: italic;
   font-weight: 600;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-SemiBoldItalic.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-SemiBoldItalic.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: normal;
   font-weight: 700;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-Bold.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-Bold.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: italic;
   font-weight: 700;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-BoldItalic.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-BoldItalic.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: normal;
   font-weight: 800;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-ExtraBold.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-ExtraBold.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: italic;
   font-weight: 800;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-ExtraBoldItalic.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-ExtraBoldItalic.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: normal;
   font-weight: 900;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-Black.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-Black.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: 'Noto Serif';
   font-style: italic;
   font-weight: 900;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-BlackItalic.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif/static/NotoSerif-BlackItalic.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "ZhuqueFangsong";
+  font-family: 'ZhuqueFangsong';
   font-style: normal;
   font-weight: 400;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/ZhuqueFangsong-Regular.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/ZhuqueFangsong-Regular.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif SC";
+  font-family: 'Noto Serif SC';
   font-style: normal;
   font-weight: 100;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-Thin.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-Thin.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif SC";
+  font-family: 'Noto Serif SC';
   font-style: normal;
   font-weight: 200;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-ExtraLight.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-ExtraLight.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif SC";
+  font-family: 'Noto Serif SC';
   font-style: normal;
   font-weight: 300;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-Light.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-Light.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif SC";
+  font-family: 'Noto Serif SC';
   font-style: normal;
   font-weight: 400;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-Regular.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-Regular.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif SC";
+  font-family: 'Noto Serif SC';
   font-style: normal;
   font-weight: 500;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-Medium.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-Medium.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif SC";
+  font-family: 'Noto Serif SC';
   font-style: normal;
   font-weight: 600;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-SemiBold.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-SemiBold.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif SC";
+  font-family: 'Noto Serif SC';
   font-style: normal;
   font-weight: 700;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-Bold.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-Bold.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif SC";
+  font-family: 'Noto Serif SC';
   font-style: normal;
   font-weight: 800;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-ExtraBold.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-ExtraBold.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Noto Serif SC";
+  font-family: 'Noto Serif SC';
   font-style: normal;
   font-weight: 900;
-  src: url("https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-Black.ttf") format("truetype");
+  src: url('https://lihaozhe013.github.io/lihaozhe-website/fonts/Noto_Serif_SC/static/NotoSerifSC-Black.ttf')
+    format('truetype');
 }

@@ -17,7 +17,7 @@ git branch | grep -v "$(git symbolic-ref --short HEAD)" | xargs git branch -D
 ## Clear Local Tags
 
 ```bash
-git tag -d $(git tag -l) 
+git tag -d $(git tag -l)
 ```
 
 ### Git Fast-Forward Merge

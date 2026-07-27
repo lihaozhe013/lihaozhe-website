@@ -35,7 +35,7 @@ Here's an example:
 - encoder: `hevc_nvenc` or `av1_nvenc`
 - input file: `input.mp4`
 - output file: `output.mp4`
-- present: `-preset p4`; *NVIDIA graphics cards offer presets ranging from p1 (fastest) to p7 (highest quality). p4 strikes a balance, while p6 delivers better visuals but slightly slower encoding (though still quite fast for the 4060).*
+- present: `-preset p4`; _NVIDIA graphics cards offer presets ranging from p1 (fastest) to p7 (highest quality). p4 strikes a balance, while p6 delivers better visuals but slightly slower encoding (though still quite fast for the 4060)._
 
 ```bash
 ffmpeg -i input.mp4 -c:v hevc_nvenc -preset p4 -b:v 3000k -maxrate 4000k -bufsize 6000k -vtag hvc1 -c:a copy output.mp4
