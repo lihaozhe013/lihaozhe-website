@@ -1,3 +1,10 @@
+{{/* 语言检测与持久化 */}}
+{{- $langJS := resources.Get "js/lang.js" }}
+{{- if $langJS }}
+{{- $langJSProcessed := $langJS | minify | fingerprint }}
+<script src="{{ $langJSProcessed.RelPermalink }}"></script>
+{{- end }}
+
 {{/* 自定义 CSS 样式 */}}
 {{- $fontsCSS := resources.Get "css/fonts.css" }}
 {{- if $fontsCSS }}

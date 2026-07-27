@@ -1,0 +1,90 @@
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="{{ .Site.Home.Permalink }}" class="logo">
+            {{ partial "svgs/home.svg" (dict "height" 25 "width" 25) . }}
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                {{ partial "svgs/menu.svg" (dict "height" 25 "width" 25) . }}
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                <li>
+                    <a class="menu-link {{ if or ($currentPage.IsMenuCurrent "main" .)
+                        ($currentPage.HasMenuCurrent "main" .) }}active{{ end }}" href="{{ .URL }}">
+                        {{ .Name }}
+                    </a>
+                    {{ if .HasChildren }}
+                    <ul>
+                        {{ range .Children }}
+                        <li>
+                            <a class="menu-link {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}"
+                                href="{{ .URL }}">
+                                {{ .Name }}
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    {{ end }}
+                </li>
+                {{ end }}
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                <!-- Language List — always show all languages -->
+                {{ $pageLang := .Page.Lang }}
+                {{ $currentPage := . }}
+                {{ $currentURL := .Permalink }}
+                <li>
+                    <select aria-label="Select Language" class="lang-list" id="select-language">
+                        {{ range .Site.Languages }}
+                            {{ $lang := .Lang }}
+                            {{ $label := .Label | default .Lang }}
+                            {{/* Try to find translation for current page */}}
+                            {{ $permalink := "" }}
+                            {{ if $currentPage.IsTranslated }}
+                                {{ range $currentPage.Translations }}
+                                    {{ if eq .Lang $lang }}
+                                        {{ $permalink = .Permalink }}
+                                    {{ end }}
+                                {{ end }}
+                            {{ end }}
+                            {{/* Fallback: swap language prefix in current URL */}}
+                            {{ if eq $permalink "" }}
+                                {{ if eq $lang $currentPage.Lang }}
+                                    {{ $permalink = $currentPage.Permalink }}
+                                {{ else }}
+                                    {{/* Replace /en/ with /zh-cn/ or vice versa */}}
+                                    {{ $oldPrefix := printf "/%s/" $currentPage.Lang }}
+                                    {{ $newPrefix := printf "/%s/" $lang }}
+                                    {{ $permalink = replace $currentURL $oldPrefix $newPrefix }}
+                                    {{/* If no replacement happened (default lang has no prefix), insert prefix */}}
+                                    {{ if and (eq $permalink $currentURL) (ne $lang (index $.Site.Languages 0).Lang) }}
+                                        {{ $permalink = replace $currentURL $.Site.BaseURL (printf "%s%s/" $.Site.BaseURL $lang) }}
+                                    {{ end }}
+                                {{ end }}
+                            {{ end }}
+                            {{ if eq $pageLang $lang }}
+                                <option id="{{ $lang }}" value="{{ $permalink }}" selected>{{ $label }}</option>
+                            {{ else }}
+                                <option id="{{ $lang }}" value="{{ $permalink }}">{{ $label }}</option>
+                            {{ end }}
+                        {{ end }}
+                    </select>
+                </li>
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+            </ul>
+            <a id="mode" href="#">
+                {{ partial "svgs/sun.svg" (dict "height" 21 "width" 21 "class" "mode-sunny" "title" "LIGHT") . }}
+                {{ partial "svgs/sun.svg" (dict "height" 21 "width" 21 "class" "mode-moon" "title" "DARK") . }}
+            </a>
+        </div>
+    </nav>
+</div>

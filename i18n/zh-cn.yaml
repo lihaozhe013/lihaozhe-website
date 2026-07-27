@@ -26,21 +26,4 @@
 - id: "errors.404_description"
   translation: "您访问的路径不存在。"
 
-## INDEX ##
-- id: "index.welcome"
-  translation: ""
 
-- id: "index.intro"
-  translation: ""
-
-- id: "index.portfolio_description"
-  translation: ""
-
-- id: "index.view_portfolio"
-  translation: ""
-
-- id: "index.resume_description"
-  translation: ""
-
-- id: "index.view_resume"
-  translation: ""

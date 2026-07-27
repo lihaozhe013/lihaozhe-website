@@ -24,17 +24,18 @@ lihaozhe-website/
 │   ├── css/
 │   │   ├── custom.css          # Global styles (font-family, layout, etc.)
 │   │   └── fonts.css           # @font-face definitions (Noto Serif, ZhuqueFangsong, Noto Serif SC)
-│   ├── avatar.svg
-│   └── sass/                   # Theme SCSS (via submodule)
+│   ├── js/
+│   │   └── lang.js             # Browser language detection + localStorage persistence
+│   └── avatar.svg
 ├── content/
 │   ├── en/                     # English content (default language)
 │   │   ├── _index.md           # Homepage
 │   │   ├── pages/about.md
-│   │   └── posts/              # Blog posts
+│   │   └── posts/              # Blog posts (each post is a leaf bundle: Post-Name/index.md)
 │   └── zh-cn/                  # Chinese content (/zh-cn/ prefix)
-│       ├── _index.md           # (optional) Chinese homepage
+│       ├── _index.md           # Chinese homepage (optional, falls back to i18n strings)
 │       ├── pages/about.md      # (optional) Chinese about page
-│       └── posts/              # (optional) Chinese posts
+│       └── posts/              # (optional) Chinese posts — same directory names as English
 ├── i18n/
 │   ├── en.yaml                 # English UI strings
 │   └── zh-cn.yaml              # Chinese UI strings
@@ -42,7 +43,8 @@ lihaozhe-website/
 │   ├── index.html              # Custom homepage (i18n-enabled)
 │   ├── _default/rss.xml        # Custom RSS template
 │   └── partials/
-│       └── custom-head.html    # Injects fonts.css, custom.css, and KaTeX
+│       ├── header.html         # Overridden: always-visible language switcher
+│       └── custom-head.html    # Injects fonts.css, custom.css, lang.js, and KaTeX
 ├── static/
 │   └── fonts/                  # Font files (Noto Serif, ZhuqueFangsong, Noto Serif SC)
 ├── themes/
@@ -54,27 +56,56 @@ lihaozhe-website/
 
 The site supports **English** (default) and **Chinese** (`/zh-cn/`).
 
-- English pages are served from the root (e.g. `/posts/my-post/`).
-- Chinese pages are served under `/zh-cn/` (e.g. `/zh-cn/posts/my-post/`).
-- Untranslated Chinese pages fall back to the English version automatically.
-- A language switcher dropdown appears in the navigation bar.
+### How it works
+
+- English pages are served from the root: `/posts/my-post/`
+- Chinese pages are served under `/zh-cn/`: `/zh-cn/posts/my-post/`
+- A language switcher dropdown appears on **every** page in the navigation bar
+- For pages with translations, the switcher links to the translated version
+- For pages without translations, the switcher links to the target language's homepage
+- First-time visitors are auto-redirected based on browser language (via `assets/js/lang.js`)
+- Language preference is saved in `localStorage` and persists across visits
 
 ### Adding a Chinese translation of a post
 
-Create the corresponding file under `content/zh-cn/posts/`:
+Create the corresponding file under `content/zh-cn/posts/` with the **same directory name** as the English version:
 
 ```bash
 mkdir -p content/zh-cn/posts/My-Post
 # Then create content/zh-cn/posts/My-Post/index.md with the Chinese content
 ```
 
+Hugo automatically links translations by matching directory paths under each language's `contentDir`.
+
 ### Translating UI strings
 
-Edit `i18n/en.yaml` and `i18n/zh-cn.yaml`. Each entry has an `id` and a `translation`. Hugo's `{{ i18n "id" }}` function looks up the string for the current language.
+Edit `i18n/en.yaml` and `i18n/zh-cn.yaml`. Each entry has an `id` and a `translation`. Hugo's `{{ i18n "id" }}` function looks up the string for the current language. If a key is missing from a language file, Hugo falls back to the default language.
 
-### Multilingual config in hugo.toml
+### hugo.toml multilingual config
 
-Menus and site name are defined per language under `[languages.en]` and `[languages.zh-cn]`. Shared params (author, social links, webmanifest, etc.) live in the global `[params]` block.
+Each language has its own `contentDir`, `locale`, `label`, `title`, and menu entries:
+
+```toml
+[languages.en]
+  contentDir = 'content/en'
+  locale = 'en-us'
+  label = 'English'
+  ...
+  [[languages.en.menu.main]]
+    name = 'Posts'
+    url = '/en/posts/'
+
+[languages.zh-cn]
+  contentDir = 'content/zh-cn'
+  locale = 'zh-cn'
+  label = '中文'
+  ...
+  [[languages.zh-cn.menu.main]]
+    name = '文章'
+    url = '/zh-cn/posts/'
+```
+
+Shared params (author, social links, webmanifest, etc.) live in the global `[params]` block.
 
 ## Fonts
 
