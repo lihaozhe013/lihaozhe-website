@@ -1,4 +1,9 @@
 {{/* 自定义 CSS 样式 */}}
+{{- $fontsCSS := resources.Get "css/fonts.css" }}
+{{- if $fontsCSS }}
+{{- $fontsCSSProcessed := $fontsCSS | minify | fingerprint }}
+<link href="{{ $fontsCSSProcessed.RelPermalink }}" rel="stylesheet">
+{{- end }}
 {{- $customCSS := resources.Get "css/custom.css" }}
 {{- if $customCSS }}
 {{- $customCSSProcessed := $customCSS | minify | fingerprint }}
