@@ -1,7 +1,7 @@
 +++
 date = '2024-12-01T00:00:00-00:00'
 draft = false
-title = 'Streaming Media Bit Rate'
+title = '流媒体码率指南'
 +++
 
 # Recommanded Bit Rate

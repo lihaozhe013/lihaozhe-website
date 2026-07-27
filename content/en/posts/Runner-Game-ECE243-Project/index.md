@@ -1,7 +1,7 @@
 +++
 date = '2025-04-03T00:00:00-00:00'
 draft = false
-title = 'Runner Game'
+title = 'My Work: Runner Game'
 +++
 
 This is my ECE243 course project.

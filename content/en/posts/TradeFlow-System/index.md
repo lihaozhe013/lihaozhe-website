@@ -1,32 +1,12 @@
 +++
 date = '2025-09-13T00:00:00-00:00'
 draft = false
-title = 'TradeFlow System'
+title = 'My Work: TradeFlow System'
 +++
 
 [GitHub](https://github.com/lihaozhe013/tradeflow-oss)
 
-The project is deployed on AWS Lightsail (2vCPU, 1GB Memory). In addition to the backend application, PostgreSQL and Nginx based on Docker has been deployed separately. The program has been running continuously and stably for six months with 10 users.
-
-## Screenshots
-
-![1.png](./1.png)
-
-![2.png](./2.png)
-
-![3.png](./3.png)
-
-![4.png](./4.png)
-
-![5.png](./5.png)
-
-![6.png](./6.png)
-
-![7.png](./7.png)
-
-## Language Support
-
-English, Simplified Chinese, Korean
+A lightweight tradeflow system designed for small businesses, built with React.js based frontend and Node.js + PostgreSQL based backend.
 
 ## Key Features
 
@@ -50,7 +30,35 @@ English, Simplified Chinese, Korean
 
 ## Backend Architecture Overview
 
-![](./mermaid.svg)
+```mermaid
+flowchart LR
+  Frontend["React SPA (Vite)"] -->|HTTPS /api| API["REST API"]
+  API --> Auth["JWT Auth + RBAC"]
+  Auth --> Services{{"Services<br>(Inventory, Pricing, Finance, Reports)"}}
+  Services <--> Config["Config JSON"]
+  Services <--> DB[("PostgreSQL")]
+  Services <--> Cache["Cache(JSON/Redis)"]
+  API --> Logging["Logger Middleware"] --> DB["PostgreSQL"]
+```
+
+## Demo
+
+This is the detailed page for my demo link:
+[My Demo](https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/)
+
+![1.png](https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/1.png)
+
+![2.png](https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/2.png)
+
+![3.png](https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/3.png)
+
+![4.png](https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/4.png)
+
+![5.png](https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/5.png)
+
+![6.png](https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/6.png)
+
+![7.png](https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/7.png)
 
 ## Database Schema (Backend)
 
@@ -192,81 +200,3 @@ Key endpoints (high level):
 | Finance - Receivable | `/api/receivable/payments` (GET, POST, PUT, DELETE)                  | Track customer payments                                                        |
 | Finance - Payable    | `/api/payable/payments` (GET, POST, PUT, DELETE)                     | Track supplier payments                                                        |
 | Export               | `POST /api/export/:type`                                             | Export configured datasets (e.g., inventory, base-info, invoice)               |
-
-## Quick Start
-
-### Prerequisites
-
-- Node.js 24+ (Always based on latest LTS version)
-- pnpm
-- Python/uv (for build script)
-- PostgreSQL
-- Docker (Optional)
-
-### Docker-Based Deployment
-
-1. **Copy necessary files**
-
-- Download and put `compose.yaml` from the root directory and the `config-example/config/` directory, and put them in the root directory in your production environment
-
-1. **Setup PostgreSQL**
-
-- Use `scripts/init_postgres.sql` to initialize the database, your database name, password and username should match the information inside the `config.yaml` file.
-
-1. **Start Server**
-
-```bash
-docker compose pull
-docker compose up -d
-```
-
-### Manual Build
-
-1. **Clone the project**:
-
-```bash
-git clone [https://github.com/lihaozhe013/tradeflow-core.git](https://github.com/lihaozhe013/tradeflow-core.git)
-cd tradeflow-core
-```
-
-1. **Install dependencies**:
-
-```bash
-pnpm install:all
-```
-
-1. **Set up configuration**:
-
-```bash
-# Copy the example configuration files
-cp -r config-example/* .
-```
-
-1. **Customize the build-config files**
-
-- `about.json`: Customize your company info
-- `exportConfig`: Customize your export format. You can change the order of columns, the column name, or add a customized column in this file
-- `frontendConfig.json`: Customize frontend options
-
-1. **Build**:
-
-> Note: I use `uv run` instead of `python` because the `python` command is incompatible across different systems. It is strongly recommended to use `uv`. If you prefer not to use `uv`, you can modify the `pnpm build` command yourself to `python build.py` or `python3 build.py`.
-
-```bash
-pnpm build
-```
-
-or
-
-```bash
-python3 build.py
-```
-
-### Development
-
-1. **Start the development servers**:
-
-```bash
-# Start the dev server()
-pnpm dev
-```
